@@ -18,12 +18,16 @@ namespace CodingChallengeGreenSlate.Repository
         }
         public Project GetProjectById(int projectId)
         {
-            return _dbset.Where(x => x.Id == projectId).FirstOrDefault();
+            return _dbset
+                .Where(x => x.Id == projectId)
+                .FirstOrDefault();
         }
 
         public override IEnumerable<Project> GetAll()
         {
-            return _entities.Set<Project>().AsEnumerable();
+            return _entities
+                .Set<Project>()
+                .AsEnumerable();
         }
     }
 }

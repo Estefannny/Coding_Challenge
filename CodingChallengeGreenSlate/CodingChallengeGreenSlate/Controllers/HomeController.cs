@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Net;
-using System.Data.Entity;
-using CodingChallengeGreenSlate.Model;
 using CodingChallengeGreenSlate.Service;
 
 namespace CodingChallengeGreenSlate.Controllers
 {
     public class HomeController : Controller
     {
-        //private ContextEF db = new ContextEF();
         IUserProjectService _userProjectService;
         IUserService _userService;
         IProjectService _projectService;
@@ -33,50 +27,33 @@ namespace CodingChallengeGreenSlate.Controllers
         {
             try
             {
-                //if (Request.IsAjaxRequest())
-                //{
-                    var data = _userService.GetAll();
-                    var d = Json(data, JsonRequestBehavior.AllowGet);
-                    return Json(data, JsonRequestBehavior.AllowGet);
-                //}
-                //else
-                //{
-                //    throw new HttpException(404, "");
-                //}
+                var data = _userService.GetAll();
+                return Json(data, JsonRequestBehavior.AllowGet);
             }
-            catch
+            catch(Exception ex)
             {
-                throw new HttpException(404, "");
+                return View("Error",new HandleErrorInfo(ex,"GetUsers","Index"));
             }
         }
 
         // GET: Home/DetailsUserProjects/5
         public ActionResult DetailsUserProjects(int? id)
         {
-            if (id == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                var listProjectsForUser = _userProjectService.GetProjectsByUserId(id);
+
+                var data = listProjectsForUser;
+                return Json(data, JsonRequestBehavior.AllowGet);
             }
-
-
-            var listProjectsForUser = _userProjectService.GetProjectsByUserId(id);
-
-            var data = listProjectsForUser;
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            catch (Exception ex)
+            {
+                return View("Error", new HandleErrorInfo(ex, "DetailsUserProjects", "Index"));
+            }
         }
     }
 }

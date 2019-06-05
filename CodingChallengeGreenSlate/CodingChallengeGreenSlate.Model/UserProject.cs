@@ -17,6 +17,7 @@ namespace CodingChallengeGreenSlate.Model
         [Required]
         public int UserId { get; set; }
 
+        [Display(Name = "Project ID")]
         [Required]
         public int ProjectId { get; set; }
 
@@ -27,6 +28,7 @@ namespace CodingChallengeGreenSlate.Model
         [Required]
         public DateTime AssignedDate { get; set; }
 
+        [Display(Name = "Time to Start")]
         [NotMapped]
         public String TimeToStart
         {
@@ -51,6 +53,7 @@ namespace CodingChallengeGreenSlate.Model
             }
         }
 
+        [Display(Name = "Status")]
         [NotMapped]
         public String Status
         {
@@ -71,6 +74,7 @@ namespace CodingChallengeGreenSlate.Model
             }
         }
 
+        [Display(Name = "Start Date")]
         [NotMapped]
         public String StartDate
         {
@@ -84,6 +88,7 @@ namespace CodingChallengeGreenSlate.Model
             }
         }
 
+        [Display(Name = "End Date")]
         [NotMapped]
         public String EndDate
         {
@@ -97,6 +102,7 @@ namespace CodingChallengeGreenSlate.Model
             }
         }
 
+        [Display(Name = "Credits")]
         [NotMapped]
         public int Credits
         {

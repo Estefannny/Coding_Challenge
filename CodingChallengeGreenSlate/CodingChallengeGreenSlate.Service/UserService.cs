@@ -22,7 +22,6 @@ namespace CodingChallengeGreenSlate.Service
             _userRepository = userRepository;
         }
 
-
         public User GetUserById(int userId)
         {
             return _userRepository.GetUserById(userId);

@@ -4,7 +4,6 @@
 
 <html>
 <body>
-    <h2>Coding Challenge GreenSlate.</h2>
     <div style="width:90%; margin:0 auto">
         @* Search Area *@
         <div style="background-color:#f5f5f5; padding:20px">
@@ -20,10 +19,10 @@
                 <thead>
                     <tr>
                     <tr>
-                        <th>ProjectId</th>
-                        <th>StartDate</th>
-                        <th>TimeToStart</th>
-                        <th>EndDate</th>
+                        <th>Project Id</th>
+                        <th>Start Date</th>
+                        <th>Time To Start</th>
+                        <th>End Date</th>
                         <th>Credits</th>
                         <th>Status</th>
                     </tr>
@@ -50,78 +49,8 @@
     <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                url: "/Home/getUsers",
-                dataSrc: "",
-                datatype: "JSON",
-                type: "GET",
-                success: function (data) {
-                    var s = '<option value="-1">Please Select a User Name --</option>';
-                    for (var i = 0; i < data.length; i++) {
-                        s += '<option value="' + data[i].Id + '">' + data[i].FirstName + '</option>';
-                        console.log(data[i]);
-                    }
-                    $("#idUserName").html(s);
-                }
-            });
-        });
-
-        $(document).ready(function () {
-            $('#idUserName').change(function () {
-                var idUser = $('#idUserName').val();
-                updateTableProjects(idUser);
-            });
-        });
-
-        function updateTableProjects(idUser) {
-            $('#tableProjects').dataTable().fnClearTable();
-            $('#tableProjects').dataTable().fnDraw();
-            $('#tableProjects').dataTable().fnDestroy();
-            $('#tableProjects').dataTable({          
-                destroy:true,
-                retrieve: true,
-                paging: false,
-                searching: false,
-                processing: true, 
-                serverSide: true, 
-                filter: true, 
-                orderMulti: false, 
-                ajax: {
-                    url: "/Home/DetailsUserProjects/"+idUser,
-                    dataSrc: "",
-                    type: "GET",
-                    datatype: "json",
-                },
-                columns: [
-                    { "data": "ProjectId" },
-                    {"data":"StartDate"},
-                    //{
-                    //    "data": "StartDate", "render": function (date) {
-                    //        var date = new Date(parseInt(date.substr(6)));
-                    //        var month = date.getMonth() + 1;
-                    //        return date.getDate() + "/" + month + "/" + date.getFullYear();
-                    //    }
-                    //},
-                    { "data": "TimeToStart" },
-                    {"data":"EndDate"},
-                    //{
-                    //    "data": "EndDate", "render": function (date) {
-                    //        var date = new Date(parseInt(date.substr(6)));
-                    //        var month = date.getMonth() + 1;
-                    //        return date.getDate() + "/" + month + "/" + date.getFullYear();
-                    //    }
-                    //},
-                    { "data": "Credits" },
-                    {"data":"Status"}
-                ]
-            });
-        }
-
-    </script>
-
+    <!--File logic for get projects for user-->
+    <script type="text/javascript" src="~/Scripts/GetProjectsForUser.js"></script>
 }
 
 
