@@ -1,0 +1,118 @@
+﻿
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+
+
+
+<div class="container">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <br />
+    @* Search Area *@
+    <div style="background-color:#f5f5f5; padding:20px">
+        <h2>Search Panel</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Employee Name</td>
+                    <td><input type="text" id="txtEmployeeName" /></td>
+                    <td>Country</td>
+                    <td>
+                        <select id="ddCountry" style="width:200px">
+                            <option value="">All Country</option>
+                            <option value="USA">USA</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Finland">Finland</option>
+                        </select>
+                        @* Here I have made this select box with some static data for make this example simpler.
+                            You can fill it from database data *@
+                    </td>
+                    <td>
+                        <input type="button" value="Search" id="btnSearch" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @* jQuery DataTables *@
+    <div style="width:90%; margin:0 auto;">
+        <table id="tableProjects" class="table table-hover table-bordered" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th> StartDate</th>
+                    <th>EndDate</th>
+                    <th> Credits</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+@section Scripts{
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+        <!--Import jQuery before export.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+        <!--Data Table-->
+        <script type="text/javascript" src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+
+        <!--Export table buttons-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
+    <link href="~/datatables/css/jquery.dataTables_themeroller.css" rel="stylesheet" />
+    <link href="~/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="~/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/datatables/js/dataTables.bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#tableProjects').DataTable({
+                paging: true,
+                processing: true, // for show progress bar
+                serverSide: true, // for process server side
+                filter: true, // this is for disable filter (search box)
+                orderMulti: false, // for disable multiple column at once
+                ajax: {
+                    url: "/Project/loaddata",
+                    dataSrc: "",
+                    type: "GET",
+                    datatype: "json",
+                },
+                columns: [
+                    {
+                        "data": "StartDate", "render": function (date) {
+                            var date = new Date(parseInt(date.substr(6)));
+                            var month = date.getMonth() + 1;
+                            return date.getDate() + "/" + month + "/" + date.getFullYear();
+                        }
+                    },
+                    {
+                        "data": "EndDate", "render": function (date) {
+                            var date = new Date(parseInt(date.substr(6)));
+                            var month = date.getMonth() + 1;
+                            return date.getDate() + "/" + month + "/" + date.getFullYear();
+                        }
+                    },
+                    { "data": "Credits" }
+                ]
+            });
+        });
+
+
+
+    </script>
+}
