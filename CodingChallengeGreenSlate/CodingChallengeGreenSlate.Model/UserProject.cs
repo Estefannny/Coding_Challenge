@@ -17,33 +17,31 @@ namespace CodingChallengeGreenSlate.Model
         [Required]
         public int UserId { get; set; }
 
-        [Display(Name = "Project ID")]
         [Required]
         public int ProjectId { get; set; }
 
-        [Column(TypeName = "BIT")]
         [Required]
         public bool IsActive { get; set; }
 
         [Required]
         public DateTime AssignedDate { get; set; }
 
-        [Display(Name = "Time to Start")]
         [NotMapped]
         public String TimeToStart
         {
             get
             {
-                int intStartDate = Convert.ToInt32(Project.StartDate.ToString("yyyyMMdd"));
-                int intAssignedDate = Convert.ToInt32(AssignedDate.ToString("yyyyMMdd"));
-                if (intStartDate < intAssignedDate)
+                double days = (Project.StartDate - AssignedDate)
+                    .TotalDays;
+
+                if (Project.StartDate < AssignedDate)
                 {
                     return "Started";
                 }
                 else
                 {
-                    int daysToStartProject = intStartDate - intAssignedDate;
-                    string daysToStart = daysToStartProject.ToString() + " days";
+                    string daysToStart = days
+                        .ToString() + " days";
                     return daysToStart;
                 }
             }
@@ -80,7 +78,9 @@ namespace CodingChallengeGreenSlate.Model
         {
             get
             {
-                return Project.StartDate.ToString("dd/MM/yyyy") ;
+                return Project
+                    .StartDate
+                    .ToString("dd/MM/yyyy") ;
             }
             private set
             {
@@ -94,7 +94,9 @@ namespace CodingChallengeGreenSlate.Model
         {
             get
             {
-                return Project.EndDate.ToString("dd/MM/yyyy");
+                return Project
+                    .EndDate
+                    .ToString("dd/MM/yyyy");
             }
             private set
             {
