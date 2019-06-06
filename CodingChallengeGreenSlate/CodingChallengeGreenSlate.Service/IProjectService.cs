@@ -1,8 +1,8 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Service.Common;
+using CodingChallengeGreenSlate.Business.Common;
 
 
-namespace CodingChallengeGreenSlate.Service
+namespace CodingChallengeGreenSlate.Business
 {
     public interface IProjectService : IEntityService<Project>
     {

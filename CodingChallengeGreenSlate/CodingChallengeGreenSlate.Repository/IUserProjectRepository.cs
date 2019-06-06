@@ -1,9 +1,9 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository.Common;
+using CodingChallengeGreenSlate.Data.Common;
 using System.Collections.Generic;
 
 
-namespace CodingChallengeGreenSlate.Repository
+namespace CodingChallengeGreenSlate.Data
 {
     public interface IUserProjectRepository : IGenericRepository<UserProject>
     {

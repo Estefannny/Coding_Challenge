@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace CodingChallengeGreenSlate.Service.Common
+namespace CodingChallengeGreenSlate.Business.Common
 {
     public interface IEntityService<T> : IService
      where T : BaseEntity

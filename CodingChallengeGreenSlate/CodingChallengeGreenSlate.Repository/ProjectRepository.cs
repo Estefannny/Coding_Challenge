@@ -1,5 +1,5 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository.Common;
+using CodingChallengeGreenSlate.Data.Common;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodingChallengeGreenSlate.Repository
+namespace CodingChallengeGreenSlate.Data
 {
     public class ProjectRepository : GenericRepository<Project>, IProjectRepository
     {

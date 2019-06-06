@@ -378,13 +378,13 @@
       <Project>{A0D01943-098A-43FF-B72C-7837AFB07579}</Project>
       <Name>CodingChallengeGreenSlate.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CodingChallengeGreenSlate.Repository\CodingChallengeGreenSlate.Repository.csproj">
+    <ProjectReference Include="..\CodingChallengeGreenSlate.Repository\CodingChallengeGreenSlate.Data.csproj">
       <Project>{5C5F2BC8-2004-4B98-A7A8-2DC344F17331}</Project>
-      <Name>CodingChallengeGreenSlate.Repository</Name>
+      <Name>CodingChallengeGreenSlate.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CodingChallengeGreenSlate.Service\CodingChallengeGreenSlate.Service.csproj">
+    <ProjectReference Include="..\CodingChallengeGreenSlate.Service\CodingChallengeGreenSlate.Business.csproj">
       <Project>{261579a1-17e8-4019-9fc4-b044296484de}</Project>
-      <Name>CodingChallengeGreenSlate.Service</Name>
+      <Name>CodingChallengeGreenSlate.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

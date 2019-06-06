@@ -115,9 +115,9 @@
       <Project>{A0D01943-098A-43FF-B72C-7837AFB07579}</Project>
       <Name>CodingChallengeGreenSlate.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CodingChallengeGreenSlate.Repository\CodingChallengeGreenSlate.Repository.csproj">
+    <ProjectReference Include="..\CodingChallengeGreenSlate.Repository\CodingChallengeGreenSlate.Data.csproj">
       <Project>{5C5F2BC8-2004-4B98-A7A8-2DC344F17331}</Project>
-      <Name>CodingChallengeGreenSlate.Repository</Name>
+      <Name>CodingChallengeGreenSlate.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

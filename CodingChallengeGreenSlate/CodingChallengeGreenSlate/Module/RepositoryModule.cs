@@ -11,7 +11,7 @@ namespace CodingChallengeGreenSlate.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(Assembly.Load("CodingChallengeGreenSlate.Repository"))
+            builder.RegisterAssemblyTypes(Assembly.Load("CodingChallengeGreenSlate.Data"))
                    .Where(t => t.Name.EndsWith("Repository"))
                    .AsImplementedInterfaces()
                   .InstancePerLifetimeScope();

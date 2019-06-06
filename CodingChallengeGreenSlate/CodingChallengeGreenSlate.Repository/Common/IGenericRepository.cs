@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 
 
-namespace CodingChallengeGreenSlate.Repository.Common
+namespace CodingChallengeGreenSlate.Data.Common
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {

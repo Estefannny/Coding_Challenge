@@ -1,13 +1,8 @@
-﻿using CodingChallengeGreenSlate.Model.Common;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
+﻿using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Threading;
-using System.Web;
+
 
 namespace CodingChallengeGreenSlate.Model
 {

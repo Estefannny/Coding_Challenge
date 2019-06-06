@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace CodingChallengeGreenSlate.Repository.Common
+namespace CodingChallengeGreenSlate.Data.Common
 {
     public abstract class GenericRepository<T> : IGenericRepository<T>
         where T : BaseEntity

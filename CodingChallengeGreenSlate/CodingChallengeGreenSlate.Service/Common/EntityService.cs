@@ -1,10 +1,10 @@
 ﻿using CodingChallengeGreenSlate.Model.Common;
-using CodingChallengeGreenSlate.Repository.Common;
+using CodingChallengeGreenSlate.Data.Common;
 using System;
 using System.Collections.Generic;
 
 
-namespace CodingChallengeGreenSlate.Service.Common
+namespace CodingChallengeGreenSlate.Business.Common
 {
     public abstract class EntityService<T> : IEntityService<T> where T : BaseEntity
     {

@@ -1,10 +1,10 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository;
-using CodingChallengeGreenSlate.Repository.Common;
-using CodingChallengeGreenSlate.Service.Common;
+using CodingChallengeGreenSlate.Data;
+using CodingChallengeGreenSlate.Data.Common;
+using CodingChallengeGreenSlate.Business.Common;
 
 
-namespace CodingChallengeGreenSlate.Service
+namespace CodingChallengeGreenSlate.Business
 {
     public class ProjectService : EntityService<Project>, IProjectService
     {

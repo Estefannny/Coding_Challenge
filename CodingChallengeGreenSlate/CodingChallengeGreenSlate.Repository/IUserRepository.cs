@@ -1,8 +1,8 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository.Common;
+using CodingChallengeGreenSlate.Data.Common;
 
 
-namespace CodingChallengeGreenSlate.Repository
+namespace CodingChallengeGreenSlate.Data
 {
     public interface IUserRepository: IGenericRepository<User>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace CodingChallengeGreenSlate.Repository.Common
+namespace CodingChallengeGreenSlate.Data.Common
 {
     public interface IUnitOfWork : IDisposable
     {

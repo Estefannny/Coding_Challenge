@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository.Common;
+using CodingChallengeGreenSlate.Data.Common;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,9 +13,15 @@ namespace CodingChallengeGreenSlate.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterModule(new RepositoryModule());
-            builder.RegisterType(typeof(ContextEF)).As(typeof(DbContext)).InstancePerLifetimeScope();
-            builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork)).InstancePerRequest();
+            builder
+                .RegisterModule(new RepositoryModule());
+            builder
+                .RegisterType(typeof(ContextEF))
+                .As(typeof(DbContext))
+                .InstancePerLifetimeScope();
+            builder
+                .RegisterType(typeof(UnitOfWork))
+                .As(typeof(IUnitOfWork)).InstancePerRequest();
         }
     }
 }

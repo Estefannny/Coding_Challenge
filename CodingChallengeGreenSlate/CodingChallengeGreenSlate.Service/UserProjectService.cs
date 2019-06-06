@@ -1,14 +1,14 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository;
-using CodingChallengeGreenSlate.Repository.Common;
-using CodingChallengeGreenSlate.Service.Common;
+using CodingChallengeGreenSlate.Data;
+using CodingChallengeGreenSlate.Data.Common;
+using CodingChallengeGreenSlate.Business.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodingChallengeGreenSlate.Service
+namespace CodingChallengeGreenSlate.Business
 {
     public class UserProjectService : EntityService<UserProject>, IUserProjectService
     {

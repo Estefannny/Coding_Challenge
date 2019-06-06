@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate.Model", "CodingChallengeGreenSlate.Model\CodingChallengeGreenSlate.Model.csproj", "{A0D01943-098A-43FF-B72C-7837AFB07579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate.Repository", "CodingChallengeGreenSlate.Repository\CodingChallengeGreenSlate.Repository.csproj", "{5C5F2BC8-2004-4B98-A7A8-2DC344F17331}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate.Data", "CodingChallengeGreenSlate.Repository\CodingChallengeGreenSlate.Data.csproj", "{5C5F2BC8-2004-4B98-A7A8-2DC344F17331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate.Service", "CodingChallengeGreenSlate.Service\CodingChallengeGreenSlate.Service.csproj", "{261579A1-17E8-4019-9FC4-B044296484DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate.Business", "CodingChallengeGreenSlate.Service\CodingChallengeGreenSlate.Business.csproj", "{261579A1-17E8-4019-9FC4-B044296484DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallengeGreenSlate.Test", "CodingChallengeGreenSlate.Test\CodingChallengeGreenSlate.Test.csproj", "{99592E3C-B7DD-40CC-BB3E-7D47481BC11F}"
 EndProject

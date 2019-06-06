@@ -124,7 +124,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserProject.cs" />
-    <Compile Include="UserProjectDetailView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

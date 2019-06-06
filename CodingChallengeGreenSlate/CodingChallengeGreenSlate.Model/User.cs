@@ -1,10 +1,7 @@
 ﻿using CodingChallengeGreenSlate.Model.Common;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+
 
 namespace CodingChallengeGreenSlate.Model
 {
@@ -15,12 +12,12 @@ namespace CodingChallengeGreenSlate.Model
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
-        [Required(ErrorMessage="Fisrt name is a requeried field")]
+        [Required]
         public string FirstName { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
-        [Required(ErrorMessage = "Last name is a requeried field")]
+        [Required]
         public string LastName { get; set; }
     }
 }

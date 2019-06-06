@@ -1,10 +1,10 @@
 ﻿using CodingChallengeGreenSlate.Model;
-using CodingChallengeGreenSlate.Repository.Common;
+using CodingChallengeGreenSlate.Data.Common;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace CodingChallengeGreenSlate.Repository
+namespace CodingChallengeGreenSlate.Data
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
